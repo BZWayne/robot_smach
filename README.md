@@ -1,4 +1,4 @@
-# A ROS-based State-machine exercise with ontology map 
+# ROS Smach based exercise with ontology map 
 ## Experimental Robotics Laboratory course, University of Genoa.  
 ---
 
