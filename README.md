@@ -1,6 +1,6 @@
 # Robot Architecture Skeleton
 **A ROS-based State-machine exercise with ontology map for the Experimental Robotics Laboratory course held at the University of Genoa.**  
-Author: *Bauyrzhan Zhakanov*
+Author: *Bauyrzhan Zhakanov* [bauyrzhan.zhakanov@gmail.com](bauyrzhan.zhakanov@gmail.com)
 
 ---
 
