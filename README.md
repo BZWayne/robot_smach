@@ -22,6 +22,7 @@ The scenario has a robot with the following behaviour:
 4. After fully charging the battery, robot goes back to the rooms.
 
 The scheme of the task is shown below. 
+<img src="https://github.com/bzwayne/robot_smach/diagrams/states.png" width="600">
 
 ### Synchronization
 
