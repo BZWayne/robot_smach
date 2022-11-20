@@ -21,8 +21,9 @@ The scenario has a robot with the following behaviour:
 3. **If** the battery of the robot is full, **then** robot moves to the rooms, **otherwise**, it goes to the room E to charge.
 4. After fully charging the battery, robot goes back to the rooms.
 
-The scheme of the task is shown below. 
-<img src="https://github.com/bzwayne/robot_smach/diagrams/states.png" width="600">
+The scheme of the task is shown in the Figure below. 
+
+<img src="https://github.com/BZWayne/robot_smach/blob/main/diagrams/states.png">
 
 ### Synchronization
 
