@@ -8,85 +8,20 @@
 
 ## Introduction
 
-This repository contains ROS-based software that simulates a behavioural architecture of mobile robot travelling through the rooms.
+This repository contains **ROS-based** software that simulates a behavioural architecture of mobile robot travelling through the rooms. 
+The assignment is developed by using [ROS SMACH](http://wiki.ros.org/smach) state machine and builds an ontology with [armor_py_api](https://github.com/EmaroLab/armor_py_api/blob/master/scripts/armor_api/armor_manipulation_client.py) provided by Emaro Lab of University of Genoa, Italy. Everything briefly explained in **Scenario** section and in the documentation. The task is developed under the supervision of course intructors of Experimental Robotics at University of Genoa, Italy.
 
-In particular, this repository showcases the usage of *roslaunch* and
-*parameters*, as well as the implementation of ROS *nodes*, *servers* and *actions*, with related 
-*messages*; including arrays of custom items. These examples are provided in Python 3.
-
-In addition, the architecture has been bootstrapped with an approach based on the following 
-procedure.
- 1. Define each software component with a random-based dummy implementation, i.e., mind only 
-    their required and provided interfaces. The purpose is to test the flow of (meaningless) 
-    data in the architecture for evaluating the synchronization of its components. In this
-    phase, you should investigate available libraries and arrange them in your architecture
-    in a suitable way.
-
- 2. Define a simple keyboard-based interface to inject into the architecture the relevant stimulus
-   for the robot behaviour, i.e., sensor data or state variables that it needs to *sense*. The 
-   objective is to test the software without introducing uncontrollable sources of errors, e.g., 
-   that might be due to sensors.
-
- 3. Implement the components in charge to control the robot's behaviour. In this example, it will
-    be a Finite States Machine, which is tested with the simple interfaces developed in 2.
- 
- 4. Make the interfaces developed in 2 based on randomised approaches and not on a keyboard
-   interface anymore. This is done to stress the logic of your architecture and the 
-   synchronization of its software components. In this phase, you should also introduce border 
-   case situations to further stress the architecture.
-
- 5. Write scripts to automatically evaluate if the randomized robot behaviour is consistent, 
-   e.g., though *if* statements and *timestamp* comparison.
-
- 6. Develop the actual implementation (and configure the relevant dependencies) of a single 
-   software component developed in 1 with a dummy implementation.
-
- 7. Test the component implemented in 6 through the script developed in 5.
-
- 8. Go to 6 and loop until each component is implemented.
-
- 9. Test the overall architecture, finalize the documentation and refactor the code appropriately.
-
-This repository contains the components of an architecture based on the 1-st, 2-nd and 4-th 
-steps, while the 3-rd is the main task that you should tackle during the exercise. As far as the 
-exercise is concerned, the 5-th step is optional, and the 6-th will be addressed in the next 
-parts of the Experimental Robotics Laboratory course; as far as some specific components are 
-concerned.
 
 ## Scenario
 
-The scenario involves a pet-like robot with the following behaviour.
- - Normally, the robot moves randomly in the environment (e.g., in a room).
- - When the battery is low, the robot immediately stops and waits for charging. For simplicity, we 
-   do not control the robot toward a specific location to recharge its battery.
- - When a user issues specific speech-based commands a human-robot interaction phase starts or 
-   stops, i.e., *called* (e.g., "Come here!", "Hi!", etc.) or *greeted* (e.g., "Bye", "Stop", 
-   etc.), respectively.
- - When the interaction starts, the robot moves toward the user and waits for a pointing gesture. 
-   The gesture is performed by the user to indicate a position in the environment.
- - When the pointing gesture is provided, the robot moves toward such a position.
- - When the pointed position is reached, the robot comes back to the user.
- - The above three points are repeated until the interaction ends or the battery is low. When the
-   interaction ends due to a speech-based command and the battery is not low, the robot returns
-   to move randomly.
+The scenario has a robot with the following behaviour:
 
-### Assumptions
+1. Robot is in room **E** and loads a map
+2. **If** map is loaded, **then** robot starts its movement in the corridors, **otherwise**, it stays inside the room E.
+3. **If** the battery of the robot is full, **then** robot moves to the rooms, **otherwise**, it goes to the room E to charge.
+4. After fully charging the battery, robot goes back to the rooms.
 
-For simplicity and showing purposes, we consider a scenario with the following assumptions.
- - The robot moves in a 2D environment without obstacles.
- - Given a current and target position, the robot plans a trajectory to follow, i.e., a list of via 
-   points. Then, it follows the trajectory by reaching each via point. The distance between via
-   points is small enough to disregard the positions within two via points (e.g., for 
-   representing the current robot pose).
- - The user can only say simple (and predefined) commands to the robot through the speech-based 
-   interface. The speech-based commands can be given at any time, and they might be wrongly
-   detected.
- - A pointing gesture is valid only when the interaction occurs. If more gestures are provided,
-   the robot should consider the more recent one.
- - The user can point to a 2D location at any time. The location might be out of the environment, 
-   i.e, it can refer to a position that is unreachable by the robot.
- - The battery can become low at any time, and the robot should immediately react to this event.
- - The user does not move.
+The scheme of the task is shown below. 
 
 ### Synchronization
 
@@ -516,10 +451,5 @@ In addition, the Finite States Machine should have the following functionalities
 
 Note that, in Python, ROS subscribes run on separate threads. Thus, you 
 need to use `mutexes` to assure data consistency across concurrent threads.
-
-# A Solution
-
-A possible solution to this exercise is available in the [Wiki](https://github.com/buoncubi/arch_skeleton/wiki/Noetic-Py3-Solution)
-of this repository.
 
 ---
