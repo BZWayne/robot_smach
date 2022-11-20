@@ -1,5 +1,5 @@
 # ROS Smach based exercise with ontology map 
-## Experimental Robotics Laboratory course, University of Genoa.  
+## Assignment I, Experimental Robotics Laboratory course, University of Genoa.  
 ---
 
 **Author**: *[Bauyrzhan Zhakanov](https://github.com/bzwayne)*, [s5218116@studenti.unige.it](s5218116@studenti.unige.it)
