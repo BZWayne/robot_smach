@@ -8,9 +8,7 @@
 
 ## Introduction
 
-This repository contains ROS-based software that simulates a behavioural architecture.
-The objective is twofold: show examples of ROS software, and provide some guidelines 
-for bootstrapping software architectures for robotics.
+This repository contains ROS-based software that simulates a behavioural architecture of mobile robot travelling through the rooms.
 
 In particular, this repository showcases the usage of *roslaunch* and
 *parameters*, as well as the implementation of ROS *nodes*, *servers* and *actions*, with related 
