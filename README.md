@@ -9,7 +9,7 @@
 ## Introduction
 
 This repository contains **ROS-based** software that simulates a behavioural architecture of mobile robot travelling through the rooms. 
-The assignment is developed by using [ROS SMACH](http://wiki.ros.org/smach) state machine and builds an ontology with [armor_py_api](https://github.com/EmaroLab/armor_py_api/blob/master/scripts/armor_api/armor_manipulation_client.py) provided by Emaro Lab of University of Genoa, Italy. Everything briefly explained in **Scenario** section and in the documentation. The task is developed under the supervision of course intructors of Experimental Robotics at University of Genoa, Italy.
+The assignment is developed by using [ROS SMACH](http://wiki.ros.org/smach) state machine and builds an ontology with [armor_py_api](https://github.com/EmaroLab/armor_py_api/blob/master/scripts/armor_api/armor_manipulation_client.py) provided by Emaro Lab of University of Genoa, Italy. An important aspect of this exercise is the synchronization between the robot and the user. The user should never wait for the robot to complete an action, except when it is recharging its battery.  Everything briefly explained in **Scenario** section and in the documentation. The task is developed under the supervision of course intructors of Experimental Robotics at University of Genoa, Italy.
 
 
 ## Scenario
@@ -25,14 +25,6 @@ The scheme of the task is shown in the Figure below.
 
 <img src="https://github.com/BZWayne/robot_smach/blob/main/diagrams/states.png">
 
-### Synchronization
-
-An important aspect of this exercise is the synchronization between the robot and the user. In
-particular, the user should never wait for the robot to complete an action, except when it is
-recharging its battery. This implies that the Finite States Machine should never be blocked. In
-other words, the Finite States Machine should process speech-based, gesture-based, and 
-battery-based events as soon as they occur. Furthermore, we consider that the Finite States 
-Machine does not allow for concurrent states.
 
 ## Project Structure
 
