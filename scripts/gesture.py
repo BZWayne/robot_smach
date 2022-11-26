@@ -3,9 +3,9 @@
 import random
 import rospy
 # Import constant name defined to structure the architecture.
-from robot_smach import architecture_name_mapper as anm
+from arch_skeleton import architecture_name_mapper as anm
 # Import the message type (and sub-type) to be published.
-from robot_smach.msg import Gesture, Point
+from arch_skeleton.msg import Gesture, Point
 
 
 # A tag for identifying logs producer.

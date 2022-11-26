@@ -17,33 +17,41 @@
     <rosparam param="test/random_sense/battery_time"> [15.0, 40.0] </rosparam>
 
 
-    <node pkg = "robot_smach"  
+    <node pkg = "arch_skeleton"  
           type = "gesture.py"      
           name = "gesture"      
           output = "screen"
     > </node>
 
-    <node pkg = "robot_smach"  
+    <node pkg = "arch_skeleton"  
           type = "speech.py"
           name = "speech"
           output = "screen"
     > </node>
 
-    <node pkg = "robot_smach"  
+    <node pkg = "arch_skeleton"  
           type = "robot_states.py" 
           name = "robot_states"
           output = "screen"
     > </node>
     
-    <node pkg = "robot_smach"  
+    <node pkg = "arch_skeleton"  
           type = "planner.py"
           name = "planner"
           output = "screen"
     > </node>
     
-    <node pkg = "robot_smach"  
+    <node pkg = "arch_skeleton"  
           type = "controller.py"
           name = "controller"
           output = "screen"
     > </node>
+    
+    <node pkg = "arch_skeleton"  
+      type = "behaviour.py"
+      name = "behaviour"
+      output = "screen"
+    > </node>
+
+
 </launch>

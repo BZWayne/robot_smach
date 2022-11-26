@@ -1,6 +1,6 @@
 ## Init project.
 cmake_minimum_required(VERSION 2.8.3)
-project(robot_smach)
+project(arch_skeleton)
 
 ## Find dependences.
 find_package(catkin REQUIRED COMPONENTS
@@ -64,6 +64,7 @@ catkin_install_python(
     scripts/planner.py
     scripts/controller.py
     scripts/robot_states.py
+    scripts/behaviour.py
   DESTINATION 
     ${CATKIN_PACKAGE_BIN_DESTINATION}
 )

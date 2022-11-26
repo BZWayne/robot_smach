@@ -98,6 +98,12 @@ ACTION_CONTROLLER = 'motion/controller'
 PARAM_CONTROLLER_TIME = 'test/random_motion_time'
 # -------------------------------------------------
 
+# The name of the node implementing the Finite State Machine.
+NODE_BEHAVIOUR = 'behaviour'
+
+# The name of the ROS parameter to configure the user's position as static coordinate.
+# `PARAM_USER_POSE` should be a list of two coordinates ordered as `[x, y]`.
+PARAM_USER_POSE = 'config/user_pose'
 
 # Function used to label each log with a producer tag.
 def tag_log(msg, producer_tag):
