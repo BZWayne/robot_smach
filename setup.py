@@ -3,7 +3,7 @@ from catkin_pkg.python_setup import generate_distutils_setup
 
 # This file runs with `catkin_make`, do not run it manually!
 setup_args = generate_distutils_setup(
-    packages=['arch_skeleton'],
+    packages=['robot_smach'],
     package_dir={'': 'utilities'}
 )
 

@@ -1,6 +1,6 @@
 ## Init project.
 cmake_minimum_required(VERSION 2.8.3)
-project(arch_skeleton)
+project(robot_smach)
 
 ## Find dependences.
 find_package(catkin REQUIRED COMPONENTS
