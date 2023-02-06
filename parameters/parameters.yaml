@@ -1,0 +1,11 @@
+path: '/root/ros_ws/src/robot_smach/src/topological_map_loaded.owl'
+time_to_stay_in_location: 1
+time_of_one_charge: 30
+time_of_charging: 15
+visitedAt_R1: 1665579734
+visitedAt_R2: 1665579736
+visitedAt_R3: 1665579738
+visitedAt_R4: 1665579740
+visitedAt_C2: 1665579740
+visitedAt_C1: 1665579740
+visitedAt_E: 1665579740
