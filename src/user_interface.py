@@ -30,25 +30,22 @@ path = rospy.get_param("/path")
 user_publisher = rospy.Publisher('map_state', Map, queue_size=2)
 ontology = ArmorClient("example", "ontoRef")
 
-def main_interface():
+def main():
 
     state_of_the_map = 0
     user_publisher.publish(state_of_the_map)
     ontology.call('LOAD','FILE','',[path, 'http://bnc/exp-rob-lab/2022-23', 'true', 'PELLET', 'false'])
 
     while True:
-        print("Choose the type of operation: (type [m] for manipulation, type [q] for query, type [u] for utils)")
-        type_of_operation = input("Choose the type of operation: ")
-
-        while not type_of_operation == 'm' or type_of_operation == 'q' or type_of_operation == 'u':
-          type_of_operation = input("Choose again the type of operation: ")
-
-        reference_name = input("Name the operation: ")
-        first_command = input("Enter the first command: ")
-        second_command = input("Enter the second command: ")
-        num_of_args = int(input("Enter the number of args: "))
-        args = [input("Enter argument number %d: " % (i+1)) for i in range(num_of_args)]
-
+    
+        print(" Choose the type of operation: (type [m] for manipulation, type [q] for query, type [u] for utils)")
+        type_of_operation = input(" Choose the type of operation: ")
+        reference_name = input(" Name the operation: ")   
+        first_command = input(" Enter the first command: ") 
+        second_command = input(" Enter the second command: ")    
+        num_of_args = int(input(" Enter the number of args: ")
+        args = [input(" Enter argument number %d: " % (i+1)) for i in range(num_of_args)]
+          
         ontology.call(reference_name, first_command, second_command, args)
 
         if type_of_operation == "m":
@@ -60,7 +57,7 @@ def main_interface():
 
 if __name__ == '__main__':
     try:
-        main_interface()
+        main()
     except rospy.ROSInterruptException:
         pass
 

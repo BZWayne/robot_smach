@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch>
 	<rosparam command="load" file="$(find robot_smach)/yaml/parameters.yaml" />
-    <node pkg="armor" type="execute" name="armor_service" args="it.emarolab.armor.ARMORMainService"/> 
+        <node pkg="armor" type="execute" name="armor_service" args="it.emarolab.armor.ARMORMainService"/> 
 	<node pkg="robot_smach" type="battery.py" name="battery" output="screen" launch-prefix="xterm -e"  />
 	<node pkg="robot_smach" type="user_interface.py" name="user_interface" output="screen" launch-prefix="xterm -e"  />
 	<node pkg="robot_smach" type="state_machine.py" name="smach_robot" output="screen" launch-prefix="xterm -e"  />
