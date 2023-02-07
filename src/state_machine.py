@@ -271,102 +271,102 @@ class VisitUrgentRoom(smach.State):
            time.sleep(3.0)
            return 'not_reached'
 
-# class ChargingState(smach.State):
-#        def __init__(self):
-#            """! The charging class initializer, Set the list of outcomes 
-#            @param name  no parameters
-#            @return  no returned value
-#            """  
-#            smach.State.__init__(self, outcomes=['charged'])
-#            ontology = ArmorClient("example", "ontoRef")
+class ChargingState(smach.State):
+       def __init__(self):
+           """! The charging class initializer, Set the list of outcomes 
+           @param name  no parameters
+           @return  no returned value
+           """  
+           smach.State.__init__(self, outcomes=['charged'])
+           ontology = ArmorClient("example", "ontoRef")
   
-#        def execute(self, userdata): 
-#            """! A method of the class charging
-#            @param userdata
-#            @return  one of its outcomes
-#            """ 
-#            rospy.loginfo('Executing charging state')
-#            ontology = ArmorClient("example", "ontoRef")
-#            global timeC1,timeC2,timer,timeE
+       def execute(self, userdata): 
+           """! A method of the class charging
+           @param userdata
+           @return  one of its outcomes
+           """ 
+           rospy.loginfo('Executing charging state')
+           ontology = ArmorClient("example", "ontoRef")
+           global timeC1,timeC2,timer,timeE
 
-#            while battery == 0:
-#              rospy.Subscriber("/battery_state", Battery, battery_callback)
-#              time.sleep(1.0)
-#              req = ontology.call('QUERY', 'OBJECTPROP', 'IND', ['isIn', 'Robot1'])
-#              time.sleep(2.0)
+           while battery == 0:
+             rospy.Subscriber("/battery_state", Battery, battery_callback)
+             time.sleep(1.0)
+             req = ontology.call('QUERY', 'OBJECTPROP', 'IND', ['isIn', 'Robot1'])
+             time.sleep(2.0)
       
-#              if req.queried_objects[0] == "<http://bnc/exp-rob-lab/2022-23#C1>":
-#                print("Robot is in C1 and needs to be charged")
-#                timer += time_to_stay_in_location
-#                ontology.call('REPLACE', 'OBJECTPROP', 'IND', ['isIn', 'Robot1', 'E', 'C1'])
-#                print("Robot moved to E to be charged")
-#                ontology.call('REPLACE', 'DATAPROP', 'IND', ['visitedAt', 'E', 'Long', str(timer), str(timeE)])
-#                timeE = timer
-#                ontology.call('REPLACE', 'DATAPROP', 'IND', ['now', 'Robot1', 'long', str(timer), str(timer - 1)])
-#                ontology.call('REASON', '', '', [''])
-#                time.sleep(2.0)
+             if req.queried_objects[0] == "<http://bnc/exp-rob-lab/2022-23#C1>":
+               print("Robot is in C1 and needs to be charged")
+               timer += time_to_stay_in_location
+               ontology.call('REPLACE', 'OBJECTPROP', 'IND', ['isIn', 'Robot1', 'E', 'C1'])
+               print("Robot moved to E to be charged")
+               ontology.call('REPLACE', 'DATAPROP', 'IND', ['visitedAt', 'E', 'Long', str(timer), str(timeE)])
+               timeE = timer
+               ontology.call('REPLACE', 'DATAPROP', 'IND', ['now', 'Robot1', 'long', str(timer), str(timer - 1)])
+               ontology.call('REASON', '', '', [''])
+               time.sleep(2.0)
 
-#              elif req.queried_objects[0] == "<http://bnc/exp-rob-lab/2022-23#C2>":
-#                print("Robot is in C2 and needs to be charged")
-#                timer += time_to_stay_in_location 
-#                ontology.call('REPLACE','OBJECTPROP','IND',['isIn','Robot1','E','C2'])
-#                print("Robot moved to E to be charged")
-#                ontology.call('REPLACE','DATAPROP','IND',['visitedAt','E','Long',str(timer),str(timeE)])
-#                timeE=timer
-#                ontology.call('REPLACE','DATAPROP','IND' ,['now','Robot1','long',str(timer),str(timer-1)])
-#                ontology.call('REASON','','',[''])
-#                time.sleep(2.0)
+             elif req.queried_objects[0] == "<http://bnc/exp-rob-lab/2022-23#C2>":
+               print("Robot is in C2 and needs to be charged")
+               timer += time_to_stay_in_location 
+               ontology.call('REPLACE','OBJECTPROP','IND',['isIn','Robot1','E','C2'])
+               print("Robot moved to E to be charged")
+               ontology.call('REPLACE','DATAPROP','IND',['visitedAt','E','Long',str(timer),str(timeE)])
+               timeE=timer
+               ontology.call('REPLACE','DATAPROP','IND' ,['now','Robot1','long',str(timer),str(timer-1)])
+               ontology.call('REASON','','',[''])
+               time.sleep(2.0)
 
-#              elif req.queried_objects[0] == "<http://bnc/exp-rob-lab/2022-23#R1>":
-#                print("Robot is in R1 and needs to be charged")
-#                timer += time_to_stay_in_location 
-#                ontology.call('REPLACE','OBJECTPROP','IND',['isIn','Robot1','C1','R1'])
-#                print("Robot moved to C1")
-#                ontology.call('REPLACE','DATAPROP','IND',['visitedAt','C1','Long',str(timer),str(timeC1)])
-#                timeC1=timer
-#                ontology.call('REPLACE','DATAPROP','IND' ,['now','Robot1','long',str(timer),str(timer-1)])
-#                print(timer)
-#                ontology.call('REASON','','',[''])
-#                time.sleep(2.0)
+             elif req.queried_objects[0] == "<http://bnc/exp-rob-lab/2022-23#R1>":
+               print("Robot is in R1 and needs to be charged")
+               timer += time_to_stay_in_location 
+               ontology.call('REPLACE','OBJECTPROP','IND',['isIn','Robot1','C1','R1'])
+               print("Robot moved to C1")
+               ontology.call('REPLACE','DATAPROP','IND',['visitedAt','C1','Long',str(timer),str(timeC1)])
+               timeC1=timer
+               ontology.call('REPLACE','DATAPROP','IND' ,['now','Robot1','long',str(timer),str(timer-1)])
+               print(timer)
+               ontology.call('REASON','','',[''])
+               time.sleep(2.0)
 
-#              elif req.queried_objects[0] == "<http://bnc/exp-rob-lab/2022-23#R2>":
-#                print("Robot is in R2 and needs to be charged")
-#                timer += time_to_stay_in_location 
-#                ontology.call('REPLACE','OBJECTPROP','IND',['isIn','Robot1','C1','R2'])
-#                print("Robot moved to C1")
-#                ontology.call('REPLACE','DATAPROP','IND',['visitedAt','C1','Long',str(timer),str(timeC1)])
-#                timeC1=timer
-#                ontology.call('REPLACE','DATAPROP','IND' ,['now','Robot1','long',str(timer),str(timer-1)])
-#                ontology.call('REASON','','',[''])
-#                time.sleep(2.0)
+             elif req.queried_objects[0] == "<http://bnc/exp-rob-lab/2022-23#R2>":
+               print("Robot is in R2 and needs to be charged")
+               timer += time_to_stay_in_location 
+               ontology.call('REPLACE','OBJECTPROP','IND',['isIn','Robot1','C1','R2'])
+               print("Robot moved to C1")
+               ontology.call('REPLACE','DATAPROP','IND',['visitedAt','C1','Long',str(timer),str(timeC1)])
+               timeC1=timer
+               ontology.call('REPLACE','DATAPROP','IND' ,['now','Robot1','long',str(timer),str(timer-1)])
+               ontology.call('REASON','','',[''])
+               time.sleep(2.0)
 
-#              elif req.queried_objects[0] == "<http://bnc/exp-rob-lab/2022-23#R3>":
-#                print("Robot is in R3 and needs to be charged")
-#                timer += time_to_stay_in_location 
-#                ontology.call('REPLACE','OBJECTPROP','IND',['isIn','Robot1','C2','R3'])
-#                print("Robot moved to C2")
-#                ontology.call('REPLACE','DATAPROP','IND',['visitedAt','C2','Long',str(timer),str(timeC2)])
-#                timeC2=timer
-#                ontology.call('REPLACE','DATAPROP','IND' ,['now','Robot1','long',str(timer),str(timer-1)])
-#                print(timer)
-#                ontology.call('REASON','','',[''])
-#                time.sleep(2.0)
+             elif req.queried_objects[0] == "<http://bnc/exp-rob-lab/2022-23#R3>":
+               print("Robot is in R3 and needs to be charged")
+               timer += time_to_stay_in_location 
+               ontology.call('REPLACE','OBJECTPROP','IND',['isIn','Robot1','C2','R3'])
+               print("Robot moved to C2")
+               ontology.call('REPLACE','DATAPROP','IND',['visitedAt','C2','Long',str(timer),str(timeC2)])
+               timeC2=timer
+               ontology.call('REPLACE','DATAPROP','IND' ,['now','Robot1','long',str(timer),str(timer-1)])
+               print(timer)
+               ontology.call('REASON','','',[''])
+               time.sleep(2.0)
 
-#              elif req.queried_objects[0] == "<http://bnc/exp-rob-lab/2022-23#R4>":
-#                print("Robot is in R4 and needs to be charged")
-#                timer += time_to_stay_in_location 
-#                ontology.call('REPLACE','OBJECTPROP','IND',['isIn','Robot1','C2','R4'])
-#                print("Robot moved to C2")
-#                ontology.call('REPLACE','DATAPROP','IND',['visitedAt','C2','Long',str(timer),str(timeC2)])
-#                timeC2=timer
-#                ontology.call('REPLACE','DATAPROP','IND' ,['now','Robot1','long',str(timer),str(timer-1)])
-#                print(timer)
-#                ontology.call('REASON','','',[''])
-#                time.sleep(2.0)
+             elif req.queried_objects[0] == "<http://bnc/exp-rob-lab/2022-23#R4>":
+               print("Robot is in R4 and needs to be charged")
+               timer += time_to_stay_in_location 
+               ontology.call('REPLACE','OBJECTPROP','IND',['isIn','Robot1','C2','R4'])
+               print("Robot moved to C2")
+               ontology.call('REPLACE','DATAPROP','IND',['visitedAt','C2','Long',str(timer),str(timeC2)])
+               timeC2=timer
+               ontology.call('REPLACE','DATAPROP','IND' ,['now','Robot1','long',str(timer),str(timer-1)])
+               print(timer)
+               ontology.call('REASON','','',[''])
+               time.sleep(2.0)
 
-#            time.sleep(2.0)
-#            print("Robot is charged")
-#            return 'charged'
+           time.sleep(2.0)
+           print("Robot is charged")
+           return 'charged'
 
            
 def main():
@@ -387,8 +387,8 @@ def main():
                                   transitions={'move':'MOVING_IN_CORRIDORS', 'tired':'CHARGING', 'urgent':'VISITING_URGENT' })
            smach.StateMachine.add('VISITING_URGENT', VisitUrgentRoom(), 
                                   transitions={'visited':'MOVING_IN_CORRIDORS', 'tired':'CHARGING','not_reached':'MOVING_IN_CORRIDORS'})
-          #  smach.StateMachine.add('CHARGING', ChargingState(), 
-          #                         transitions={'charged':'MOVING_IN_CORRIDORS'})
+           smach.StateMachine.add('CHARGING', ChargingState(), 
+                                  transitions={'charged':'MOVING_IN_CORRIDORS'})
        sis = smach_ros.IntrospectionServer('server_name', sm, '/SM_ROOT')
        sis.start()
        # Execute SMACH plan
