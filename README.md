@@ -128,7 +128,7 @@ $ bash run.sh
 ``` 
 
 ### Result
-<img src="https://github.com/BZWayne/robotPatrol/blob/main/images/scene.png" align="center" width="80%"/>
+<img src="https://github.com/BZWayne/robot_smach/blob/main/images/scene.png" align="center" width="80%"/>
 
 ### Limitations of the System:
 
