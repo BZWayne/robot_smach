@@ -127,6 +127,9 @@ $ roscd robot_smach/launch
 $ bash run.sh
 ``` 
 
+### Result
+<img src="https://github.com/BZWayne/robotPatrol/blob/main/images/scene.png" align="center" width="80%"/>
+
 ### Limitations of the System:
 
 The robot has certain limitations that need to be considered. It can only recharge in room E and is only capable of charging up to 20% of its battery capacity. Additionally, the robot consumes battery power whenever it moves, and if it remains stationary in a room, the battery is not consumed. If the robot's battery level drops to 7%, the system considers room E as the first urgent case for the robot to visit.
