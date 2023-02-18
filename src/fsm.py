@@ -1,27 +1,16 @@
 #!/usr/bin/env python
 """
-	.. module:: fsm
-		:platform: Unix
-		:synopsis: the fsm python script
-	.. moduleauthor:: Bauyrzhan Zhakanov <bauyrzhan.zhakanov@gmail.com>
-	Subscribes to:
-		/image_id
-	Uses Service:
-		/state/set_battery_level
-		/state/get_pose
-		/state/set_base_movement_state
-		/room_info
-		/move_arm
-	Uses Action:
-		/move_base
-	Uses helper script:
-		/utilities/robot_control/map.py
-	The finite state machine's initial state involves building a semantic map of
-	the environment using image IDs of markers detected by the robot camera. 
-	This node updates the ontology using the map.py helper script 
-	and retrieves the target room based on the last visit times and the robot's 
-	battery state. In the next state, the robot moves to the target room, and if 
-	the battery level drops below a threshold, the robot goes to the charger to recharge.
+.. module:: fsm
+    :platform: Unix
+    :synopsis: the fsm python script
+.. moduleauthor:: Bauyrzhan Zhakanov <bauyrzhan.zhakanov@gmail.com>
+
+The finite state machine's initial state involves building a semantic map of
+the environment using image IDs of markers detected by the robot camera. 
+This node updates the ontology using the map.py helper script 
+and retrieves the target room based on the last visit times and the robot's 
+battery state. In the next state, the robot moves to the target room, and if 
+the battery level drops below a threshold, the robot goes to the charger to recharge.
 """
 import rospy
 import smach

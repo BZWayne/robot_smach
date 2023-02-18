@@ -6,14 +6,10 @@
     
 .. moduleauthor:: Bauyrzhan Zhakanov <bauyrzhan.zhakanov@gmail.com>
 
-Subscribes to :
-    /odom
 Uses Service:
     /state/get_pose
-    /state/set_pose 
 
-Robot states is the script where the robot condition will be identified such as battery level, base movement, odometry information,
-its pose information. 
+Robot states is the script where the robot condition will be identified its pose information. 
 """
 import rospy
 from robot_control import logs_mapper as anm
@@ -40,9 +36,8 @@ class RobotState:
     def get_pose(self, request):
         """
         The implementation of the /state/get_pose service. The input parameter, request, 
-        from the client is not used. The response returned to the client contains the current 
-        robot pose. The argument request is of type GetPoseRequest. The returned value is of
-        type GetPoseResponse.
+        from the client is not used. The argument request is of type GetPoseRequest. 
+        The returned value is of type GetPoseResponse.
         """
         if self._pose is None:
             rospy.logerr(anm.tag_log('Error', node_fsm))

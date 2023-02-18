@@ -1,17 +1,11 @@
 #!/usr/bin/env python
 """
-	.. module:: map
-		:platform: Unix
-		:synopsis: the map python script
-	.. moduleauthor:: Bauyrzhan Zhakanov <bauyrzhan.zhakanov@gmail.com>
+.. module:: map
+    :platform: Unix
+    :synopsis: the map python script
+.. moduleauthor:: Bauyrzhan Zhakanov <bauyrzhan.zhakanov@gmail.com>
 
-	Uses Service:
-		/state/get_battery  
-		/state/get_pose
-
-	Map is established utilizing the methods from the 
-	ArmorClient and the incomplete Ontology file, 
-	topological_map.owl, which only holds class definitions.
+Map is established utilizing the methods from the ArmorClient and the incomplete Ontology file, created via 		Protege topological_map_new.owl, which only holds class definitions.
 """
 
 import rospy
@@ -294,108 +288,6 @@ class MapOntology:
 
         return location
     
-    # def modified_ontology(self):
-    #     """
-    #     Function updates a map and sync with the reasoner. If pass more 
-    #     than 7 secs since the last time robot was here, the location is added 
-    #     to the list of URGENT locations to visit. If battery level of robot less 
-    #     than 7, the robot first has to go to ROOM E to charge.
-    #     Return: 
-    #         target_room(string): next destination  
-    #         battery_lvl(string): next destination 
-	#     """
-    #     self.client.utils.sync_buffered_reasoner()
-
-    #     location_now = self.get_location()
-    #     print(location_now)
-    #     #self.client.manipulation.replace_objectprop_b2_ind("isIn", "Robot", location_now, prev_location)
-        
-    #     print("Battery level: ", self.cut_dataprop_list(self.client.query.dataprop_b2_ind("batteryLvl", "Robot"))[0])
-    #     print("Current location: ", location_now)
-    #     print("Urgent locations: ", self.client.query.ind_b2_class("URGENT"))
-        
-    #     self.client.utils.sync_buffered_reasoner()
-	
-    #     now = rospy.get_rostime()
-    #     #print(now)
-    #     urgency_threshold = self.cut_dataprop_list(self.client.query.dataprop_b2_ind("urgencyThreshold", "Robot"))[0]
-        
-    #     self.client.utils.sync_buffered_reasoner()
-	
-    #     # visitedAt_E = self.cut_dataprop_list(self.client.query.dataprop_b2_ind("visitedAt", "E"))[0]
-    #     # print('visited at E is')
-    #     # print(visitedAt_E)
-    #     # visitedAt_R1 = self.cut_dataprop_list(self.client.query.dataprop_b2_ind("visitedAt", "R1"))[0]
-    #     # visitedAt_R2 = self.cut_dataprop_list(self.client.query.dataprop_b2_ind("visitedAt", "R2"))[0]
-    #     # visitedAt_R3 = self.cut_dataprop_list(self.client.query.dataprop_b2_ind("visitedAt", "R3"))
-    #     # visitedAt_R4 = self.cut_dataprop_list(self.client.query.dataprop_b2_ind("visitedAt", "R4"))
-    #     # visitedAt_C1 = self.cut_dataprop_list(self.client.query.dataprop_b2_ind("visitedAt", "C1"))
-    #     # visitedAt_C2 = self.cut_dataprop_list(self.client.query.dataprop_b2_ind("visitedAt", "C2"))
-        
-    #     self.client.utils.sync_buffered_reasoner()
-        
-    #     visitedAt_E = self.cut_dataprop_list(self.client.query.dataprop_b2_ind("visitedAt", "E"))[0]
-    #     print(visitedAt_E)
-    #     visitedAt_R1 = self.cut_dataprop_list(self.client.query.dataprop_b2_ind("visitedAt", "R1"))[0]
-    #     visitedAt_R2 = self.cut_dataprop_list(self.client.query.dataprop_b2_ind("visitedAt", "R2"))[0]
-    #     visitedAt_R3 = self.cut_dataprop_list(self.client.query.dataprop_b2_ind("visitedAt", "R3"))[0]
-    #     visitedAt_R4 = self.cut_dataprop_list(self.client.query.dataprop_b2_ind("visitedAt", "R4"))[0]
-    #     visitedAt_C1 = self.cut_dataprop_list(self.client.query.dataprop_b2_ind("visitedAt", "C1"))[0]
-    #     visitedAt_C2 = self.cut_dataprop_list(self.client.query.dataprop_b2_ind("visitedAt", "C2"))[0]
-        
-    #     visitedAt_dict = {visitedAt_R1: "R1", visitedAt_R2: "R2", visitedAt_R3: "R3", visitedAt_R4: "R4", visitedAt_C1: "C1", visitedAt_C2: "C2", visitedAt_E: "E"}
-        
-    #     #visitedAt_dict = {tuple(visitedAt_R1): "R1", tuple(visitedAt_R2): "R2", tuple(visitedAt_R3): "R3", tuple(visitedAt_R4): "R4", tuple(visitedAt_C1): "C1", tuple(visitedAt_C2): "C2", tuple(visitedAt_E): "E"}
-        
-    #     visitedAt_dict = dict(sorted(visitedAt_dict.items()))
-    #     room_list = list(visitedAt_dict.values())
-    #     print("some val")
-    #     target_room = room_list[0]
-    #     print("VisitedAt times: ", visitedAt_dict)
-    #     print("Target room: ", target_room)
-
-    #     if now.secs - int(visitedAt_E) > int(urgency_threshold):
-    #         self.client.manipulation.add_ind_to_class("E", "URGENT")
-    #     else:
-    #         self.client.manipulation.remove_ind_from_class("E", "URGENT")
-
-    #     if now.secs - int(visitedAt_R1) > int(urgency_threshold):
-    #         self.client.manipulation.add_ind_to_class("R1", "URGENT")
-    #     else:
-    #         self.client.manipulation.remove_ind_from_class("R1", "URGENT")
-
-    #     if now.secs - int(visitedAt_R2) > int(urgency_threshold):
-    #         self.client.manipulation.add_ind_to_class("R2", "URGENT")
-    #     else:
-    #         self.client.manipulation.remove_ind_from_class("R2", "URGENT")
-
-    #     if now.secs - int(visitedAt_R3) > int(urgency_threshold):
-    #         self.client.manipulation.add_ind_to_class("R3", "URGENT")
-    #     else:
-    #         self.client.manipulation.remove_ind_from_class("R3", "URGENT")
-
-    #     if now.secs - int(visitedAt_R4) > int(urgency_threshold):
-    #         self.client.manipulation.add_ind_to_class("R4", "URGENT")
-    #     else:
-    #         self.client.manipulation.remove_ind_from_class("R4", "URGENT")
-
-    #     if now.secs - int(visitedAt_C1) > int(urgency_threshold):
-    #         self.client.manipulation.add_ind_to_class("C1", "URGENT")
-    #     else:
-    #         self.client.manipulation.remove_ind_from_class("C1", "URGENT")
-
-    #     if now.secs - int(visitedAt_C2) > int(urgency_threshold):
-    #         self.client.manipulation.add_ind_to_class("C2", "URGENT")
-    #     else:
-    #         self.client.manipulation.remove_ind_from_class("C2", "URGENT")
-
-    #     battery_lvl = self.cut_dataprop_list(self.client.query.dataprop_b2_ind("batteryLvl", "Robot"))[0]
-
-    #     if int(battery_lvl) > int(urgency_threshold):
-    #         return target_room
-    #     else:
-    #         return "E"
-
 
     def modified_ontology(self, now):
         """
@@ -415,21 +307,21 @@ class MapOntology:
         # Update robot time instance
         prev_time = self.cut_dataprop_list(self.client.query.dataprop_b2_ind("now", "Robot"))[0]
         self.client.manipulation.replace_dataprop_b2_ind("now", "Robot", "Int", str(now.secs), prev_time)
-        self.client.utils.sync_buffered_reasoner()
+
         # Update battery level
         prev_battery_level = self.cut_dataprop_list(self.client.query.dataprop_b2_ind("batteryLvl", "Robot"))[0]
         battery_level = str(self.get_battery_level())
         self.client.manipulation.replace_dataprop_b2_ind("batteryLvl", "Robot", "Int", battery_level, prev_battery_level)
-        self.client.utils.sync_buffered_reasoner()
+
         # Update robot location
         prev_loc = self.cut_objprop_list(self.client.query.objectprop_b2_ind("isIn", "Robot"))[0]
         loc = self.get_location()
         self.client.manipulation.replace_objectprop_b2_ind("isIn", "Robot", loc, prev_loc)
-        self.client.utils.sync_buffered_reasoner()
+
         #Update last visited time
         prev_time = self.cut_dataprop_list(self.client.query.dataprop_b2_ind("visitedAt", loc))[0]
         self.client.manipulation.replace_dataprop_b2_ind("visitedAt", loc, "Int", str(now.secs), prev_time)
-        self.client.utils.sync_buffered_reasoner()
+
         # Detect target room
         visitedAt_E = self.cut_dataprop_list(self.client.query.dataprop_b2_ind("visitedAt", "E"))[0]
         visitedAt_R1 = self.cut_dataprop_list(self.client.query.dataprop_b2_ind("visitedAt", "R1"))[0]
@@ -438,12 +330,16 @@ class MapOntology:
         visitedAt_R4 = self.cut_dataprop_list(self.client.query.dataprop_b2_ind("visitedAt", "R4"))[0]
         visitedAt_C1 = self.cut_dataprop_list(self.client.query.dataprop_b2_ind("visitedAt", "C1"))[0]
         visitedAt_C2 = self.cut_dataprop_list(self.client.query.dataprop_b2_ind("visitedAt", "C2"))[0]
+        
         visitedAt_dict = {visitedAt_R1: "R1", visitedAt_R2: "R2", visitedAt_R3: "R3", visitedAt_R4: "R4", visitedAt_C1: "C1", visitedAt_C2: "C2", visitedAt_E: "E"}
         visitedAt_dict = dict(sorted(visitedAt_dict.items()))
+        
         room_list = list(visitedAt_dict.values())
         target_room = room_list[0]
+        
         # Detect urgent locations
         urgency_threshold = self.cut_dataprop_list(self.client.query.dataprop_b2_ind("urgencyThreshold", "Robot"))[0]
+        
         if now.secs - int(visitedAt_E) > int(urgency_threshold):
             self.client.manipulation.add_ind_to_class("E", "URGENT")
         else:
@@ -474,19 +370,6 @@ class MapOntology:
             self.client.manipulation.remove_ind_from_class("C2", "URGENT")
         self.client.utils.sync_buffered_reasoner()
         urgent_rooms = self.client.query.ind_b2_class("URGENT")
-
-        # Log updated information
-        log_msg = 'Ontology Updated...'
-        rospy.loginfo(anm.tag_log(log_msg, self.log_tag))
-        log_msg = 'battery level: ' + self.cut_dataprop_list(self.client.query.dataprop_b2_ind("batteryLvl", "Robot"))[0]
-        rospy.loginfo(anm.tag_log(log_msg, self.log_tag))
-        log_msg = 'current location: ' + loc
-        rospy.loginfo(anm.tag_log(log_msg, self.log_tag))
-        log_msg = 'urgent locations: ' 
-        rospy.loginfo(anm.tag_log(log_msg, self.log_tag))
-        for i in range(0,len(urgent_rooms)):
-            log_msg = urgent_rooms[i]
-            rospy.loginfo(anm.tag_log(log_msg, self.log_tag))
         
         # Define priority for target room
         battery_threshold = self.cut_dataprop_list(self.client.query.dataprop_b2_ind("batteryThreshold", "Robot"))[0]

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to robot_smach’s documentation! &mdash; robot_smach 1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            robot_smach
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Welcome to robot_smach’s documentation!</a></li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+<li><a class="reference internal" href="#fsm-module">FSM Module</a></li>
+<li><a class="reference internal" href="#module-src.map">Map Module</a><ul>
+<li><a class="reference internal" href="#src.map.MapOntology"><code class="docutils literal notranslate"><span class="pre">MapOntology</span></code></a><ul>
+<li><a class="reference internal" href="#src.map.MapOntology.add_door"><code class="docutils literal notranslate"><span class="pre">MapOntology.add_door()</span></code></a></li>
+<li><a class="reference internal" href="#src.map.MapOntology.add_last_visit_time"><code class="docutils literal notranslate"><span class="pre">MapOntology.add_last_visit_time()</span></code></a></li>
+<li><a class="reference internal" href="#src.map.MapOntology.add_robot"><code class="docutils literal notranslate"><span class="pre">MapOntology.add_robot()</span></code></a></li>
+<li><a class="reference internal" href="#src.map.MapOntology.add_room"><code class="docutils literal notranslate"><span class="pre">MapOntology.add_room()</span></code></a></li>
+<li><a class="reference internal" href="#src.map.MapOntology.assign_doors_to_room"><code class="docutils literal notranslate"><span class="pre">MapOntology.assign_doors_to_room()</span></code></a></li>
+<li><a class="reference internal" href="#src.map.MapOntology.charging"><code class="docutils literal notranslate"><span class="pre">MapOntology.charging()</span></code></a></li>
+<li><a class="reference internal" href="#src.map.MapOntology.cut_dataprop"><code class="docutils literal notranslate"><span class="pre">MapOntology.cut_dataprop()</span></code></a></li>
+<li><a class="reference internal" href="#src.map.MapOntology.cut_dataprop_list"><code class="docutils literal notranslate"><span class="pre">MapOntology.cut_dataprop_list()</span></code></a></li>
+<li><a class="reference internal" href="#src.map.MapOntology.cut_objprop"><code class="docutils literal notranslate"><span class="pre">MapOntology.cut_objprop()</span></code></a></li>
+<li><a class="reference internal" href="#src.map.MapOntology.cut_objprop_list"><code class="docutils literal notranslate"><span class="pre">MapOntology.cut_objprop_list()</span></code></a></li>
+<li><a class="reference internal" href="#src.map.MapOntology.disjoint_individuals"><code class="docutils literal notranslate"><span class="pre">MapOntology.disjoint_individuals()</span></code></a></li>
+<li><a class="reference internal" href="#src.map.MapOntology.get_battery_level"><code class="docutils literal notranslate"><span class="pre">MapOntology.get_battery_level()</span></code></a></li>
+<li><a class="reference internal" href="#src.map.MapOntology.get_location"><code class="docutils literal notranslate"><span class="pre">MapOntology.get_location()</span></code></a></li>
+<li><a class="reference internal" href="#src.map.MapOntology.get_pose"><code class="docutils literal notranslate"><span class="pre">MapOntology.get_pose()</span></code></a></li>
+<li><a class="reference internal" href="#src.map.MapOntology.modified_ontology"><code class="docutils literal notranslate"><span class="pre">MapOntology.modified_ontology()</span></code></a></li>
+<li><a class="reference internal" href="#src.map.MapOntology.using"><code class="docutils literal notranslate"><span class="pre">MapOntology.using()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-src.robot_states">Robot state Module</a><ul>
+<li><a class="reference internal" href="#src.robot_states.RobotState"><code class="docutils literal notranslate"><span class="pre">RobotState</span></code></a><ul>
+<li><a class="reference internal" href="#src.robot_states.RobotState.get_pose"><code class="docutils literal notranslate"><span class="pre">RobotState.get_pose()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">robot_smach</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Welcome to robot_smach’s documentation!</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="welcome-to-robot-smach-s-documentation">
+<h1>Welcome to robot_smach’s documentation!<a class="headerlink" href="#welcome-to-robot-smach-s-documentation" title="Permalink to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this heading"></a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="fsm-module">
+<h1>FSM Module<a class="headerlink" href="#fsm-module" title="Permalink to this heading"></a></h1>
+</div>
+<div class="section" id="module-src.map">
+<span id="map-module"></span><h1>Map Module<a class="headerlink" href="#module-src.map" title="Permalink to this heading"></a></h1>
+<span class="target" id="module-map"></span><p>Map is established utilizing the methods from the ArmorClient and the incomplete Ontology file, created via             Protege topological_map_new.owl, which only holds class definitions.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="src.map.MapOntology">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.map.</span></span><span class="sig-name descname"><span class="pre">MapOntology</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">log_tag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init_time</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/map.html#MapOntology"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.map.MapOntology" title="Permalink to this definition"></a></dt>
+<dd><p>The Topological Map class is used for implementing the topological map.
+When an instance of the class is created, it loads the topological_map.owl
+ontology file using the loading method from the ArmorClient script.
+The class then attempts to complete the ontology by adding rooms, doors,
+and robot individuals, defining their disjointness, pre-setting their
+last visit times, and positioning the robot in room “E” through calling
+relevant functions that utilize the methods from ArmorClient.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="src.map.MapOntology.add_door">
+<span class="sig-name descname"><span class="pre">add_door</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">door</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/map.html#MapOntology.add_door"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.map.MapOntology.add_door" title="Permalink to this definition"></a></dt>
+<dd><p>Adds door to the topological map using <code class="docutils literal notranslate"><span class="pre">armor_client</span></code>
+add individual to class method and finaly syncs the reasoner</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.map.MapOntology.add_last_visit_time">
+<span class="sig-name descname"><span class="pre">add_last_visit_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">room</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visit_time</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/map.html#MapOntology.add_last_visit_time"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.map.MapOntology.add_last_visit_time" title="Permalink to this definition"></a></dt>
+<dd><p>Sets the last visit time for a specified room using the armor_client method to add data to an individual and syncs the reasoner.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>room</strong> (<em>string</em>) – The name of the room</p></li>
+<li><p><strong>visit_time</strong> (<em>string</em>) – The time of the last visit to the room</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.map.MapOntology.add_robot">
+<span class="sig-name descname"><span class="pre">add_robot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">now</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/map.html#MapOntology.add_robot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.map.MapOntology.add_robot" title="Permalink to this definition"></a></dt>
+<dd><p>Initializes the robot’s position in room “E”, sets its starting time instance and battery level,
+and establishes its urgency and battery threshold using the add data and object to individual
+methods in the armor_client. The reasoner is then synced to reflect these updates.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.map.MapOntology.add_room">
+<span class="sig-name descname"><span class="pre">add_room</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">room</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/map.html#MapOntology.add_room"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.map.MapOntology.add_room" title="Permalink to this definition"></a></dt>
+<dd><p>Adds room to the topological map using <code class="docutils literal notranslate"><span class="pre">armor_client</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.map.MapOntology.assign_doors_to_room">
+<span class="sig-name descname"><span class="pre">assign_doors_to_room</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">room</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">doors</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/map.html#MapOntology.assign_doors_to_room"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.map.MapOntology.assign_doors_to_room" title="Permalink to this definition"></a></dt>
+<dd><p>Links the rooms to their respective doors through the <code class="docutils literal notranslate"><span class="pre">armor_client</span></code> add object to individual method
+and syncs the reasoner after completion.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>room</strong> (<em>string</em>) – The name of the room.</p></li>
+<li><p><strong>doors</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a><em> of </em><em>strings</em>) – The names of the doors associated with the room.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.map.MapOntology.charging">
+<span class="sig-name descname"><span class="pre">charging</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/map.html#MapOntology.charging"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.map.MapOntology.charging" title="Permalink to this definition"></a></dt>
+<dd><p>Function to charge battery of robot. If battery level of robot is equal to 20 function stops.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.map.MapOntology.cut_dataprop">
+<span class="sig-name descname"><span class="pre">cut_dataprop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_prop</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/map.html#MapOntology.cut_dataprop"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.map.MapOntology.cut_dataprop" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts the object property from a string received from armor.
+:param data_prop:
+:type data_prop: string</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.map.MapOntology.cut_dataprop_list">
+<span class="sig-name descname"><span class="pre">cut_dataprop_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_prop_list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/map.html#MapOntology.cut_dataprop_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.map.MapOntology.cut_dataprop_list" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts the object property from a list of strings received from armor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj_prop_list</strong> (<em>string</em><em>[</em><em>]</em>) – A list of strings that contain object properties</p></li>
+<li><p><strong>data_prop_list</strong> (<em>string</em><em>[</em><em>]</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A list of extracted object properties</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)">list</a>[string]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.map.MapOntology.cut_objprop">
+<span class="sig-name descname"><span class="pre">cut_objprop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_prop</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/map.html#MapOntology.cut_objprop"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.map.MapOntology.cut_objprop" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts the object property from a string received from armor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obj_prop</strong> (<em>string</em>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.map.MapOntology.cut_objprop_list">
+<span class="sig-name descname"><span class="pre">cut_objprop_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_prop_list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/map.html#MapOntology.cut_objprop_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.map.MapOntology.cut_objprop_list" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts the object properties from a list of strings received from armor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obj_prop_list</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em>]</em>) – The list of strings to extract object properties from.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p>The list of extracted object properties.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param obj_prop_list</dt>
+<dd class="field-odd"><p></p></dd>
+<dt class="field-even">type obj_prop_list</dt>
+<dd class="field-even"><p>string[]</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)">list</a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)">str</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.map.MapOntology.disjoint_individuals">
+<span class="sig-name descname"><span class="pre">disjoint_individuals</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/map.html#MapOntology.disjoint_individuals"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.map.MapOntology.disjoint_individuals" title="Permalink to this definition"></a></dt>
+<dd><p>Disjoints every individual in each class using <code class="docutils literal notranslate"><span class="pre">armor_client</span></code> disjoint
+individuals of class method and finally syncs the reasoner</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.map.MapOntology.get_battery_level">
+<span class="sig-name descname"><span class="pre">get_battery_level</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/map.html#MapOntology.get_battery_level"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.map.MapOntology.get_battery_level" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieve the current robot battery level by the <code class="docutils literal notranslate"><span class="pre">state/battery_level</span></code> server of the
+<code class="docutils literal notranslate"><span class="pre">robot-state</span></code> node.
+:returns: battery_level(int)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.map.MapOntology.get_location">
+<span class="sig-name descname"><span class="pre">get_location</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/map.html#MapOntology.get_location"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.map.MapOntology.get_location" title="Permalink to this definition"></a></dt>
+<dd><p>Function to detect robot current location and replace new location with previous location.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>current location of robot</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>location(string)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.map.MapOntology.get_pose">
+<span class="sig-name descname"><span class="pre">get_pose</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/map.html#MapOntology.get_pose"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.map.MapOntology.get_pose" title="Permalink to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>Retrieve the current robot pose by calling the ‘state/get_pose’ service of the</dt><dd><p>‘robot-state’ node.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>pose (Point)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.map.MapOntology.modified_ontology">
+<span class="sig-name descname"><span class="pre">modified_ontology</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">now</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/map.html#MapOntology.modified_ontology"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.map.MapOntology.modified_ontology" title="Permalink to this definition"></a></dt>
+<dd><p>The function which is called in <code class="docutils literal notranslate"><span class="pre">finite_state_machine</span></code> node, it gets current time instance as
+an argument, it gets robot current location using <code class="docutils literal notranslate"><span class="pre">get_location()</span></code> function, it gets robot current battery
+level using <code class="docutils literal notranslate"><span class="pre">get_battery_level()</span></code> function, and updates them in the ontology. It sorts the last visit
+times and detects which room is the most behind and sets it as the target room. It detects the urgent rooms
+considering the last visit times and robot urgeny threshold and updates them in the ontology, finally, it
+returns the target room as it is found.If the battery level is high enough otherwise it returns room “E” as
+target room, and battery level state.
+:param now:
+:type now: float32</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>target_room(string)
+battery_low(bool)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.map.MapOntology.using">
+<span class="sig-name descname"><span class="pre">using</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/map.html#MapOntology.using"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.map.MapOntology.using" title="Permalink to this definition"></a></dt>
+<dd><p>Function to consume battery of robot when robot move between ROOMs.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-src.robot_states">
+<span id="robot-state-module"></span><h1>Robot state Module<a class="headerlink" href="#module-src.robot_states" title="Permalink to this heading"></a></h1>
+<span class="target" id="module-robot_states"></span><dl class="simple">
+<dt>Uses Service:</dt><dd><p>/state/get_pose</p>
+</dd>
+</dl>
+<p>Robot states is the script where the robot condition will be identified its pose information.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="src.robot_states.RobotState">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.robot_states.</span></span><span class="sig-name descname"><span class="pre">RobotState</span></span><a class="reference internal" href="_modules/src/robot_states.html#RobotState"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.robot_states.RobotState" title="Permalink to this definition"></a></dt>
+<dd><p>Initializes the “robot-states” node to provide crucial information about the robot’s current
+state, such as its pose, battery level, and base movement state.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="src.robot_states.RobotState.get_pose">
+<span class="sig-name descname"><span class="pre">get_pose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/robot_states.html#RobotState.get_pose"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.robot_states.RobotState.get_pose" title="Permalink to this definition"></a></dt>
+<dd><p>The implementation of the /state/get_pose service. The input parameter, request,
+from the client is not used. The argument request is of type GetPoseRequest.
+The returned value is of type GetPoseResponse.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Bauyrzhan Zhakanov.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
