@@ -1,0 +1,10 @@
+####### The service to get the current robot base movement state
+
+### No service inputs
+
+---
+
+### Service output
+
+# The current robot base movement state 
+bool base_movement_state

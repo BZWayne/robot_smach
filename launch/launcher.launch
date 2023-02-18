@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+	<!--rosparam command="load" file="$(find robot_smach)/yaml/parameters.yaml" /-->
+    <node pkg="armor" type="execute" name="armor_service" args="it.emarolab.armor.ARMORMainService"/>
+    <node pkg="robot_smach" type="robot_state.py" name="robot_state" output="screen"  />
+    <node pkg = "smach_viewer" type = "smach_viewer.py" name = "smach_viewer" />
+</launch>

@@ -1,0 +1,7 @@
+int32 id
+---
+string room
+float32 x
+float32 y
+RoomConnection[] connections
+int32 visit_time

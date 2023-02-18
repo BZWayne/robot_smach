@@ -47,20 +47,24 @@ find_package(catkin REQUIRED COMPONENTS
 ##   * uncomment the generate_messages entry below
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
-##Generate messages in the 'msg' folder
+
 add_message_files(
    FILES
-   Map.msg
-   Battery.msg
+   RoomConnection.msg
+   Point.msg
  )
 
 ## Generate services in the 'srv' folder
-# add_service_files(
-#   FILES
-#   Service1.srv
-#   Service2.srv
-# )
-
+add_service_files(
+   FILES
+   RoomInformation.srv
+   SetBatteryLevel.srv
+   GetBatteryLevel.srv
+   GetPose.srv
+   SetPose.srv
+   SetBaseMovementState.srv
+   GetBaseMovementState.srv
+ )
 ## Generate actions in the 'action' folder
 # add_action_files(
 #   FILES

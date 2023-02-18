@@ -1,0 +1,9 @@
+####### The service to get the current robot battery level
+### Service inputs
+
+int16 battery_level_in
+
+### Service output
+
+# The current robot battery level 
+int16 battery_level_out

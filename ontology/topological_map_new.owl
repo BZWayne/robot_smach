@@ -1,0 +1,498 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://bnc/exp-rob-lab/2022-23"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://bnc/exp-rob-lab/2022-23">
+    <Prefix name="" IRI="http://bnc/exp-rob-lab/2022-23"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="swrl" IRI="http://www.w3.org/2003/11/swrl#"/>
+    <Prefix name="swrla" IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"/>
+    <Prefix name="swrlb" IRI="http://www.w3.org/2003/11/swrlb#"/>
+    <Prefix name="exp-rob-lab" IRI="http://bnc/exp-rob-lab/2022-23#"/>
+    <Declaration>
+        <Class IRI="#CORRIDOR"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DOOR"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LOCATION"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ROBOT"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ROOM"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#URGENT"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#canReach"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#connectedTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDoor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isIn"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#now"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#urgencyThreshold"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#visitedAt"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#C1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#C2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#D1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#D2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#D3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#D4"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#D5"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#D6"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#D7"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#E"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#R1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#R2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#R3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#R4"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Robot1"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="swrla:isRuleEnabled"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#CORRIDOR"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#LOCATION"/>
+            <ObjectMinCardinality cardinality="4">
+                <ObjectProperty IRI="#hasDoor"/>
+                <Class IRI="#DOOR"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#LOCATION"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#visitedAt"/>
+            <Datatype abbreviatedIRI="xsd:long"/>
+        </DataExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#ROBOT"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#isIn"/>
+            <Class IRI="#LOCATION"/>
+        </ObjectExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#ROOM"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#LOCATION"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasDoor"/>
+                <Class IRI="#DOOR"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#URGENT"/>
+        <Class IRI="#LOCATION"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#DOOR"/>
+        <Class IRI="#LOCATION"/>
+        <Class IRI="#ROBOT"/>
+    </DisjointClasses>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#C1"/>
+        <NamedIndividual IRI="#C2"/>
+        <NamedIndividual IRI="#E"/>
+        <NamedIndividual IRI="#R1"/>
+        <NamedIndividual IRI="#R2"/>
+        <NamedIndividual IRI="#R3"/>
+        <NamedIndividual IRI="#R4"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#D1"/>
+        <NamedIndividual IRI="#D2"/>
+        <NamedIndividual IRI="#D3"/>
+        <NamedIndividual IRI="#D4"/>
+        <NamedIndividual IRI="#D5"/>
+        <NamedIndividual IRI="#D6"/>
+        <NamedIndividual IRI="#D7"/>
+    </DifferentIndividuals>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasDoor"/>
+        <NamedIndividual IRI="#C1"/>
+        <NamedIndividual IRI="#D1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasDoor"/>
+        <NamedIndividual IRI="#C1"/>
+        <NamedIndividual IRI="#D2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasDoor"/>
+        <NamedIndividual IRI="#C1"/>
+        <NamedIndividual IRI="#D5"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasDoor"/>
+        <NamedIndividual IRI="#C1"/>
+        <NamedIndividual IRI="#D7"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasDoor"/>
+        <NamedIndividual IRI="#C2"/>
+        <NamedIndividual IRI="#D3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasDoor"/>
+        <NamedIndividual IRI="#C2"/>
+        <NamedIndividual IRI="#D4"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasDoor"/>
+        <NamedIndividual IRI="#C2"/>
+        <NamedIndividual IRI="#D5"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasDoor"/>
+        <NamedIndividual IRI="#C2"/>
+        <NamedIndividual IRI="#D6"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasDoor"/>
+        <NamedIndividual IRI="#E"/>
+        <NamedIndividual IRI="#D6"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasDoor"/>
+        <NamedIndividual IRI="#E"/>
+        <NamedIndividual IRI="#D7"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasDoor"/>
+        <NamedIndividual IRI="#R1"/>
+        <NamedIndividual IRI="#D1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasDoor"/>
+        <NamedIndividual IRI="#R2"/>
+        <NamedIndividual IRI="#D2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasDoor"/>
+        <NamedIndividual IRI="#R3"/>
+        <NamedIndividual IRI="#D3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasDoor"/>
+        <NamedIndividual IRI="#R4"/>
+        <NamedIndividual IRI="#D4"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isIn"/>
+        <NamedIndividual IRI="#Robot1"/>
+        <NamedIndividual IRI="#E"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#visitedAt"/>
+        <NamedIndividual IRI="#C1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#long">1665579785</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#visitedAt"/>
+        <NamedIndividual IRI="#C2"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#long">1665579740</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#visitedAt"/>
+        <NamedIndividual IRI="#E"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#long">1665579790</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#visitedAt"/>
+        <NamedIndividual IRI="#R1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#long">1665579770</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#visitedAt"/>
+        <NamedIndividual IRI="#R2"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#long">1665579750</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#visitedAt"/>
+        <NamedIndividual IRI="#R3"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#long">1665579725</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#visitedAt"/>
+        <NamedIndividual IRI="#R4"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#long">1665579705</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#now"/>
+        <NamedIndividual IRI="#Robot1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#long">1665579790</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#urgencyThreshold"/>
+        <NamedIndividual IRI="#Robot1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#long">7</Literal>
+    </DataPropertyAssertion>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isIn"/>
+    </FunctionalObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#canReach"/>
+        <Class IRI="#ROBOT"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#connectedTo"/>
+        <Class IRI="#LOCATION"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDoor"/>
+        <Class IRI="#LOCATION"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isIn"/>
+        <Class IRI="#ROBOT"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#canReach"/>
+        <Class IRI="#LOCATION"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#connectedTo"/>
+        <Class IRI="#LOCATION"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDoor"/>
+        <Class IRI="#DOOR"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isIn"/>
+        <Class IRI="#LOCATION"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#now"/>
+        <Class IRI="#ROBOT"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#urgencyThreshold"/>
+        <Class IRI="#ROBOT"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#visitedAt"/>
+        <Class IRI="#LOCATION"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#now"/>
+        <Datatype abbreviatedIRI="xsd:long"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#urgencyThreshold"/>
+        <Datatype abbreviatedIRI="xsd:long"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#visitedAt"/>
+        <Datatype abbreviatedIRI="xsd:long"/>
+    </DataPropertyRange>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="swrla:isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>Infer the connected location.</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>Connectability</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#DOOR"/>
+                <Variable IRI="http://bnc/exp-rob-lab/d"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#LOCATION"/>
+                <Variable IRI="http://bnc/exp-rob-lab/l1"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#LOCATION"/>
+                <Variable IRI="http://bnc/exp-rob-lab/l2"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#hasDoor"/>
+                <Variable IRI="http://bnc/exp-rob-lab/l2"/>
+                <Variable IRI="http://bnc/exp-rob-lab/d"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#hasDoor"/>
+                <Variable IRI="http://bnc/exp-rob-lab/l1"/>
+                <Variable IRI="http://bnc/exp-rob-lab/d"/>
+            </ObjectPropertyAtom>
+            <DifferentIndividualsAtom>
+                <Variable IRI="http://bnc/exp-rob-lab/l1"/>
+                <Variable IRI="http://bnc/exp-rob-lab/l2"/>
+            </DifferentIndividualsAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#connectedTo"/>
+                <Variable IRI="http://bnc/exp-rob-lab/l1"/>
+                <Variable IRI="http://bnc/exp-rob-lab/l2"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="swrla:isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>Infer which room should be urgently visited.</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>Urgency</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#ROBOT"/>
+                <Variable IRI="http://bnc/exp-rob-lab/r"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#now"/>
+                <Variable IRI="http://bnc/exp-rob-lab/r"/>
+                <Variable IRI="http://bnc/exp-rob-lab/t"/>
+            </DataPropertyAtom>
+            <ClassAtom>
+                <Class IRI="#LOCATION"/>
+                <Variable IRI="http://bnc/exp-rob-lab/l"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#visitedAt"/>
+                <Variable IRI="http://bnc/exp-rob-lab/l"/>
+                <Variable IRI="http://bnc/exp-rob-lab/v"/>
+            </DataPropertyAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:subtract">
+                <Variable IRI="http://bnc/exp-rob-lab/d"/>
+                <Variable IRI="http://bnc/exp-rob-lab/t"/>
+                <Variable IRI="http://bnc/exp-rob-lab/v"/>
+            </BuiltInAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#urgencyThreshold"/>
+                <Variable IRI="http://bnc/exp-rob-lab/r"/>
+                <Variable IRI="http://bnc/exp-rob-lab/h"/>
+            </DataPropertyAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:greaterThan">
+                <Variable IRI="http://bnc/exp-rob-lab/d"/>
+                <Variable IRI="http://bnc/exp-rob-lab/h"/>
+            </BuiltInAtom>
+        </Body>
+        <Head>
+            <ClassAtom>
+                <Class IRI="#URGENT"/>
+                <Variable IRI="http://bnc/exp-rob-lab/l"/>
+            </ClassAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="swrla:isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>Infer the location that the robot can reach.</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>Reachability</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#LOCATION"/>
+                <Variable IRI="http://bnc/exp-rob-lab/l1"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#LOCATION"/>
+                <Variable IRI="http://bnc/exp-rob-lab/l2"/>
+            </ClassAtom>
+            <DifferentIndividualsAtom>
+                <Variable IRI="http://bnc/exp-rob-lab/l1"/>
+                <Variable IRI="http://bnc/exp-rob-lab/l2"/>
+            </DifferentIndividualsAtom>
+            <ClassAtom>
+                <Class IRI="#ROBOT"/>
+                <Variable IRI="http://bnc/exp-rob-lab/r"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#isIn"/>
+                <Variable IRI="http://bnc/exp-rob-lab/r"/>
+                <Variable IRI="http://bnc/exp-rob-lab/l1"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#connectedTo"/>
+                <Variable IRI="http://bnc/exp-rob-lab/l1"/>
+                <Variable IRI="http://bnc/exp-rob-lab/l2"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#canReach"/>
+                <Variable IRI="http://bnc/exp-rob-lab/r"/>
+                <Variable IRI="http://bnc/exp-rob-lab/l2"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+</Ontology>
