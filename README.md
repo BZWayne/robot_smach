@@ -20,12 +20,12 @@ The assignment is developed by using [ROS SMACH](http://wiki.ros.org/smach) stat
 <img src="https://github.com/BZWayne/robotPatrol/blob/main/images/enviroment_ontology.png" align="left" width="250px"/>
                 The scenario has a robot with the following behaviour:
 
-                1. Robot is in room **E** and loads a map
-                2. **If** map is loaded, **then** robot starts its movement in the corridors, 
-                    **otherwise**, it stays inside the room E.
-                3. **If** the battery of the robot is full, **then** robot moves to the rooms, 
-                   **otherwise**, it goes to the room E to charge.
-                4. After fully charging the battery, robot goes back to the rooms.
+ 1. Robot is in room **E** and loads a map
+ 2. **If** map is loaded, **then** robot starts its movement in the corridors, 
+ **otherwise**, it stays inside the room E.
+ 3. **If** the battery of the robot is full, **then** robot moves to the rooms, 
+ **otherwise**, it goes to the room E to charge.
+ 4. After fully charging the battery, robot goes back to the rooms.
  <br clear="left"/>
 
 ## Project Structure
