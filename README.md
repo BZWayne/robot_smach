@@ -56,11 +56,11 @@ This repository contains a ROS package named `arch_skeleton` that includes the f
     - [map.py](scripts/gesture.py): It is a topological map creator script.
     - [robot_state.py](scripts/robot_state.py): It implements the robot state including:
       current position, and battery level.
- - [utilities/arch_skeleton/](utilities/arch_skeleton/): It contains auxiliary python files, 
+ - [utilities/robot_control/](utilities/robot_control/): It contains auxiliary python files, 
    which are exploited by the files in the `scripts` folder.
     - [architecture_name_mapper.py](scripts/architecture_name_mapper.py): It contains the name 
       of each *node*, *topic*, *server*, *actions* and *parameters* used in this architecture.
- - [diagrams/](diagrams/): It contains the diagrams shown below in this README file.
+ - [images/](imegs/): It contains the diagrams shown below in this README file.
 
 
 ## Software Components
