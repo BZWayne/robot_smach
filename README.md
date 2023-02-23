@@ -38,13 +38,11 @@ This repository contains a ROS package named `arch_skeleton` that includes the f
  - [setup.py](setup.py): File to `import` python modules from the `utilities` folder into the 
    files in the `script` folder.
  - [run.sh] (bash): It launches eveyrthing
- - [launcher/](launcher/): Contains the configuration to launch this package.
-    - [solution.launch](launch/solution.launch): It launches this package allowing 
-       for keyboard-based interface.
+ - [launch/](launch/): Contains the configuration to launch this package.
+    - [solution.launch](launch/solution.launch): It launches this package 
     - [launcher.launch](launch/launcher.launch): It launches this package with 
       random-based stimulus.
  - [msg/](msg/): It contains the message exchanged through ROS topics.
-    - [Point.msg](msg/Gesture.msg): It is the float x and y based values
     - [Point.msg](msg/Point.msg): It is the message representing a 2D point.
  - [srv/](srv/): It Contains the definition of each server used by this software.
     - [GetPose.srv](srv/GetPose.srv): It defines the request and response to get the current 
